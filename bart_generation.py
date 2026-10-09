@@ -28,7 +28,7 @@ SEGMENT_COLUMN = "sentence1_segment_location"
 
 SOURCE_MAX_LENGTH = 64   # just the source sentence, tokenized on its own for the copy penalty
 
-RUNS_DIR = os.path.join(ROOT, "bart_generation_runs")   # one folder per run: the checkpoint and metrics.json. predictions/ keeps only the graded csv
+RUNS_DIR = os.path.join(ROOT, "bart_generation_runs")   # one folder per run: the checkpoint and metrics.json. predictions/ keeps only the test predictions
 
 SUBMISSION_PATH = os.path.join(ROOT, "predictions", "etpc-paraphrase-generation-test-output.csv")
 
@@ -96,8 +96,8 @@ def make_input(row, prompt="natural", use_segments=True, sep_token="</s>"):
     """build the input prompt, using the template from wahle et al
 
     the type ids become real words that bart has seen before, instead of the
-    starter format sentence1 + sep + spans + sep + raw ids. --prompt sep builds
-    that starter format, so the ablation can compare the two.
+    plain format sentence1 + sep + spans + sep + raw ids. --prompt sep builds
+    that plain format, so the ablation can compare the two.
     """
     segments = segment_text(getattr(row, SEGMENT_COLUMN, None)) if use_segments else ""
     if prompt == "sep":
@@ -465,7 +465,7 @@ def finetune_paraphrase_generation(args):
 
     train_df = pd.read_csv(os.path.join(ROOT, "data", "etpc-paraphrase-train-split.csv"))
     dev_df = pd.read_csv(os.path.join(ROOT, "data", "etpc-paraphrase-dev.csv"))
-    test_df = pd.read_csv(os.path.join(ROOT, "data", "etpc-paraphrase-generation-test-student.csv"))
+    test_df = pd.read_csv(os.path.join(ROOT, "data", "etpc-paraphrase-generation-test.csv"))
     rows_before = len(train_df)
     train_df = remove_leaky_training_rows(train_df, dev_df)
     leaky_removed = rows_before - len(train_df)
@@ -511,7 +511,7 @@ def finetune_paraphrase_generation(args):
         os.makedirs(os.path.dirname(SUBMISSION_PATH), exist_ok=True)
         test_output.to_csv(SUBMISSION_PATH, index=False)
         print(f"Wrote {SUBMISSION_PATH}")
-    else:   # do not overwrite the graded csv
+    else:   # do not overwrite the test predictions
         print("Skipped the test split (--no_submission).")
 
     # all we need to compare runs later, saved next to that run's checkpoint
@@ -530,7 +530,7 @@ def get_args():
     parser.add_argument("--prompt", choices=("natural", "sep"), default="natural")
     parser.add_argument("--no_reverse", action="store_true")
     parser.add_argument("--no_segments", action="store_true")
-    parser.add_argument("--no_submission", action="store_true")          # ablation runs leave the graded csv alone, only the best model writes it
+    parser.add_argument("--no_submission", action="store_true")          # ablation runs leave the test predictions alone, only the best model writes it
     parser.add_argument("--learning_rate", type=float, default=3e-5)
     parser.add_argument("--num_epochs", type=int, default=20)
     parser.add_argument("--schedule_epochs", type=int, default=12)

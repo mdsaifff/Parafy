@@ -32,7 +32,7 @@ def ablation():
     penalized = [d["penalized_bleu"] for d in data]
     copy = [100 - d["input_bleu"] for d in data]   # metrics.json stores 100 - BLEU(output, input)
     fig, (left, right) = plt.subplots(1, 2, figsize=(10, 3.8), sharey=True)
-    for ax, values, title in ((left, penalized, "Penalized BLEU (graded metric, higher is better)"),
+    for ax, values, title in ((left, penalized, "Penalized BLEU (target metric, higher is better)"),
                               (right, copy, "BLEU vs. input (copying, lower is better)")):
         ax.barh(runs, values, height=0.55, color=BLUE)
         ax.grid(axis="y", visible=False)

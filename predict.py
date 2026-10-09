@@ -27,7 +27,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 tokenizer = AutoTokenizer.from_pretrained(args.checkpoint)
 model = BartForConditionalGeneration.from_pretrained(args.checkpoint).to(device)
 
-test_df = pd.read_csv(os.path.join(ROOT, "data", "etpc-paraphrase-generation-test-student.csv"))
+test_df = pd.read_csv(os.path.join(ROOT, "data", "etpc-paraphrase-generation-test.csv"))
 test_data = transform_data(test_df, tokenizer, ARGS.max_length, ARGS.batch_size, False, "natural", True)
 test_output = test_model(model, test_data, test_df, device, tokenizer, ARGS)
 
