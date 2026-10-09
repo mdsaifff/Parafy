@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+# trained checkpoints are ~1.6 GB; only metrics.json is tracked
+bart_generation_runs/*/*
+!bart_generation_runs/*/metrics.json

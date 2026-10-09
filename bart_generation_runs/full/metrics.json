@@ -1,0 +1,162 @@
+{
+  "run_name": "full",
+  "seed": 11711,
+  "finished_at": "2026-09-07T03:13:22",
+  "config": {
+    "prompt": "natural",
+    "segments": true,
+    "reverse": true,
+    "label_smoothing": 0.1,
+    "copy_weight": 0.5,
+    "brio_weight": 0.2,
+    "brio_start_epoch": 2,
+    "learning_rate": 3e-05,
+    "batch_size": 16,
+    "num_epochs": 20,
+    "num_beams": 5,
+    "num_candidates": 4,
+    "length_penalty": 1.0,
+    "no_repeat_ngram_size": 3,
+    "max_new_tokens": 60
+  },
+  "data": {
+    "train_rows": 4210,
+    "leaky_rows_removed": 56,
+    "dev_rows": 546
+  },
+  "dev_rerank": {
+    "corpus_bleu": 33.47160601291866,
+    "input_bleu": 53.429002979602,
+    "penalized_bleu": 34.39143341146722
+  },
+  "dev_top_beam": {
+    "corpus_bleu": 33.476114113116466,
+    "input_bleu": 53.36741441269141,
+    "penalized_bleu": 34.35641643848527
+  },
+  "rerank_delta": 0.035016972981949834,
+  "best_epoch_penalized_bleu": 34.39143341146722,
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 3.1151481668154397,
+      "brio_active": false,
+      "corpus_bleu": 46.38447340448049,
+      "input_bleu": 15.749258366276266,
+      "penalized_bleu": 14.048481842900639
+    },
+    {
+      "epoch": 2,
+      "train_loss": 2.732690913207603,
+      "brio_active": false,
+      "corpus_bleu": 46.85476004471292,
+      "input_bleu": 16.41625836959342,
+      "penalized_bleu": 14.791920129602115
+    },
+    {
+      "epoch": 3,
+      "train_loss": 2.5490686839277092,
+      "brio_active": true,
+      "corpus_bleu": 41.15477984621011,
+      "input_bleu": 31.25085048959899,
+      "penalized_bleu": 24.733112921274497
+    },
+    {
+      "epoch": 4,
+      "train_loss": 2.4073063388015283,
+      "brio_active": true,
+      "corpus_bleu": 34.32901946015796,
+      "input_bleu": 45.91154140896886,
+      "penalized_bleu": 30.30958073989115
+    },
+    {
+      "epoch": 5,
+      "train_loss": 2.293580822872393,
+      "brio_active": true,
+      "corpus_bleu": 34.03251675010824,
+      "input_bleu": 49.262712157891016,
+      "penalized_bleu": 32.241039935945906
+    },
+    {
+      "epoch": 6,
+      "train_loss": 2.1996580109451758,
+      "brio_active": true,
+      "corpus_bleu": 31.661737176180264,
+      "input_bleu": 53.722052901706,
+      "penalized_bleu": 32.710259991128225
+    },
+    {
+      "epoch": 7,
+      "train_loss": 2.1245043806054373,
+      "brio_active": true,
+      "corpus_bleu": 32.02851615808856,
+      "input_bleu": 54.700629657229726,
+      "penalized_bleu": 33.69192309296539
+    },
+    {
+      "epoch": 8,
+      "train_loss": 2.066959672353484,
+      "brio_active": true,
+      "corpus_bleu": 32.10249158739833,
+      "input_bleu": 54.61371198868491,
+      "penalized_bleu": 33.71608133987217
+    },
+    {
+      "epoch": 9,
+      "train_loss": 2.017244058124947,
+      "brio_active": true,
+      "corpus_bleu": 34.621290080065656,
+      "input_bleu": 50.75207686697528,
+      "penalized_bleu": 33.790430295718096
+    },
+    {
+      "epoch": 10,
+      "train_loss": 1.9803997508504174,
+      "brio_active": true,
+      "corpus_bleu": 31.20384516610997,
+      "input_bleu": 56.558014564354316,
+      "penalized_bleu": 33.93899094939817
+    },
+    {
+      "epoch": 11,
+      "train_loss": 1.9549193048115932,
+      "brio_active": true,
+      "corpus_bleu": 33.47160601291866,
+      "input_bleu": 53.429002979602,
+      "penalized_bleu": 34.39143341146722
+    },
+    {
+      "epoch": 12,
+      "train_loss": 1.935970091458523,
+      "brio_active": true,
+      "corpus_bleu": 32.093325784897345,
+      "input_bleu": 55.70892037109508,
+      "penalized_bleu": 34.38239481912421
+    },
+    {
+      "epoch": 13,
+      "train_loss": 1.9277188723737544,
+      "brio_active": true,
+      "corpus_bleu": 32.093325784897345,
+      "input_bleu": 55.70892037109508,
+      "penalized_bleu": 34.38239481912421
+    },
+    {
+      "epoch": 14,
+      "train_loss": 1.927289493156202,
+      "brio_active": true,
+      "corpus_bleu": 32.093325784897345,
+      "input_bleu": 55.70892037109508,
+      "penalized_bleu": 34.38239481912421
+    },
+    {
+      "epoch": 15,
+      "train_loss": 1.9282251673214363,
+      "brio_active": true,
+      "corpus_bleu": 32.093325784897345,
+      "input_bleu": 55.70892037109508,
+      "penalized_bleu": 34.38239481912421
+    }
+  ],
+  "submission_written": false
+}

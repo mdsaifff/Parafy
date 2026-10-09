@@ -1,0 +1,170 @@
+{
+  "run_name": "natural_reverse",
+  "seed": 11711,
+  "finished_at": "2026-09-06T22:23:39",
+  "config": {
+    "prompt": "natural",
+    "segments": false,
+    "reverse": true,
+    "label_smoothing": 0.1,
+    "copy_weight": 0.0,
+    "brio_weight": 0.0,
+    "brio_start_epoch": 2,
+    "learning_rate": 3e-05,
+    "batch_size": 16,
+    "num_epochs": 20,
+    "num_beams": 5,
+    "num_candidates": 4,
+    "length_penalty": 1.0,
+    "no_repeat_ngram_size": 3,
+    "max_new_tokens": 60
+  },
+  "data": {
+    "train_rows": 4210,
+    "leaky_rows_removed": 56,
+    "dev_rows": 546
+  },
+  "dev_rerank": {
+    "corpus_bleu": 41.75623952841105,
+    "input_bleu": 35.448054876296624,
+    "penalized_bleu": 28.464951350594255
+  },
+  "dev_top_beam": {
+    "corpus_bleu": 42.26133888728084,
+    "input_bleu": 33.769333671198225,
+    "penalized_bleu": 27.444947197618692
+  },
+  "rerank_delta": 1.020004152975563,
+  "best_epoch_penalized_bleu": 28.464951350594255,
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 3.082090496113806,
+      "brio_active": false,
+      "corpus_bleu": 46.0501294060981,
+      "input_bleu": 16.154895187782614,
+      "penalized_bleu": 14.306442575756554
+    },
+    {
+      "epoch": 2,
+      "train_loss": 2.7070570344274696,
+      "brio_active": false,
+      "corpus_bleu": 46.73928584813561,
+      "input_bleu": 16.832321742505115,
+      "penalized_bleu": 15.129436488667976
+    },
+    {
+      "epoch": 3,
+      "train_loss": 2.518815365704623,
+      "brio_active": true,
+      "corpus_bleu": 46.1978627276119,
+      "input_bleu": 19.96295897338996,
+      "penalized_bleu": 17.735500736338796
+    },
+    {
+      "epoch": 4,
+      "train_loss": 2.3750024004416033,
+      "brio_active": true,
+      "corpus_bleu": 46.578547319452966,
+      "input_bleu": 18.53611130291928,
+      "penalized_bleu": 16.60356033541678
+    },
+    {
+      "epoch": 5,
+      "train_loss": 2.264176576426535,
+      "brio_active": true,
+      "corpus_bleu": 44.320343421928726,
+      "input_bleu": 25.813737491983062,
+      "penalized_bleu": 22.001417512465512
+    },
+    {
+      "epoch": 6,
+      "train_loss": 2.175574283256675,
+      "brio_active": true,
+      "corpus_bleu": 44.8984086124273,
+      "input_bleu": 26.67702070147807,
+      "penalized_bleu": 23.033764923406622
+    },
+    {
+      "epoch": 7,
+      "train_loss": 2.103622751254024,
+      "brio_active": true,
+      "corpus_bleu": 43.85803139065182,
+      "input_bleu": 30.244177992921436,
+      "penalized_bleu": 25.508655919192485
+    },
+    {
+      "epoch": 8,
+      "train_loss": 2.0404662069949238,
+      "brio_active": true,
+      "corpus_bleu": 43.73324198431482,
+      "input_bleu": 30.262492246394544,
+      "penalized_bleu": 25.45147877807738
+    },
+    {
+      "epoch": 9,
+      "train_loss": 1.9927920924894738,
+      "brio_active": true,
+      "corpus_bleu": 44.13979970847571,
+      "input_bleu": 29.661947101761157,
+      "penalized_bleu": 25.17831546221421
+    },
+    {
+      "epoch": 10,
+      "train_loss": 1.957567262378606,
+      "brio_active": true,
+      "corpus_bleu": 42.429494036611075,
+      "input_bleu": 34.65383763467497,
+      "penalized_bleu": 28.27586148588712
+    },
+    {
+      "epoch": 11,
+      "train_loss": 1.9310914905685368,
+      "brio_active": true,
+      "corpus_bleu": 42.890172437491806,
+      "input_bleu": 33.23928616873337,
+      "penalized_bleu": 27.41612914377136
+    },
+    {
+      "epoch": 12,
+      "train_loss": 1.9133511050180956,
+      "brio_active": true,
+      "corpus_bleu": 41.75623952841105,
+      "input_bleu": 35.448054876296624,
+      "penalized_bleu": 28.464951350594255
+    },
+    {
+      "epoch": 13,
+      "train_loss": 1.9045765165126685,
+      "brio_active": true,
+      "corpus_bleu": 41.75623952841105,
+      "input_bleu": 35.448054876296624,
+      "penalized_bleu": 28.464951350594255
+    },
+    {
+      "epoch": 14,
+      "train_loss": 1.9072987766879979,
+      "brio_active": true,
+      "corpus_bleu": 41.75623952841105,
+      "input_bleu": 35.448054876296624,
+      "penalized_bleu": 28.464951350594255
+    },
+    {
+      "epoch": 15,
+      "train_loss": 1.906590351101124,
+      "brio_active": true,
+      "corpus_bleu": 41.75623952841105,
+      "input_bleu": 35.448054876296624,
+      "penalized_bleu": 28.464951350594255
+    },
+    {
+      "epoch": 16,
+      "train_loss": 1.9045227413827723,
+      "brio_active": true,
+      "corpus_bleu": 41.75623952841105,
+      "input_bleu": 35.448054876296624,
+      "penalized_bleu": 28.464951350594255
+    }
+  ],
+  "submission_written": false
+}
