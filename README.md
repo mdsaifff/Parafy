@@ -1,4 +1,4 @@
-# Paraphrase Type Generation with BART
+# Parafy: type-controlled paraphrasing with BART
 
 [![tests](../../actions/workflows/ci.yml/badge.svg)](../../actions/workflows/ci.yml)
 

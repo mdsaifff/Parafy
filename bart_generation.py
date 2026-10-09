@@ -522,7 +522,7 @@ def finetune_paraphrase_generation(args):
 
 
 def get_args():
-    parser = argparse.ArgumentParser(description="ETPC BART paraphrase type generation")
+    parser = argparse.ArgumentParser(description="Parafy: type-controlled paraphrasing with BART (ETPC)")
     parser.add_argument("--seed", type=int, default=11711)
     parser.add_argument("--local_files_only", action="store_true")
     # turn one improvement off per run to see what it is worth
