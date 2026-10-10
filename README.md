@@ -252,6 +252,4 @@ tests/                  CPU smoke tests
 - Szegedy et al. (2016). Rethinking the Inception architecture (label smoothing). *CVPR*.
 - Post (2018). A call for clarity in reporting BLEU scores. *WMT*.
 
-## 📄 License
 
-Apache-2.0, see [LICENSE](LICENSE).
